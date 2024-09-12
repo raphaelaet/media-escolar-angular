@@ -92,13 +92,15 @@ export class Boletim {
         return mp
     }
 
-    private alterarSituacao(s: Situação) {
+    alterarSituacao(s: Situação) {
         this.situacao = s
     }
 
     obterSituacao(): Situação {
         return this.situacao
     }
-}
 
-let bol = new Boletim(89, 45, 70, 54)
+    //calcularMediaFinal(): number | undefined {
+
+    //}
+}
