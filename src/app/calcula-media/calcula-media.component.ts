@@ -16,8 +16,7 @@ export class CalculaMediaComponent {
   constructor() {
     this.mediaParcial = undefined
     this.avFinal = undefined
-    //this.situacaoFinal = Situação.AVFINAL
-    this.boletim = new Boletim(0, 0, 0, 0)
+    this.boletim = new Boletim(null, null, null, null)
   }
 
   calcularMediaParcial(b1: number, b2: number, b3: number, b4: number) {

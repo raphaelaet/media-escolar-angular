@@ -1,39 +1,41 @@
-<form>
-    <div>
-        <label for="b1">Bimestre 1: </label>
-        <input id="b1" name="b1" type="number" #b1>
-    </div>
-    <div>
-        <label for="b2">Bimestre 2: </label>
-        <input id="b2" name="b2" type="number" #b2>
-    </div>
-    <div>
-        <label for="b3">Bimestre 3: </label>
-        <input id="b3" name="b3" type="number" #b3>
-    </div>
-    <div>
-        <label for="b4">Bimestre 4: </label>
-        <input id="b4" name="b4" type="number" #b4>
-    </div>
-    <div>
-        <input type="button" value="Calcular" 
-         (click)="calcularMediaParcial(+b1.value, +b2.value, +b3.value, +b4.value)">
-    </div>
-</form>
-<div *ngIf="mediaParcial">
-    <p>Média = {{mediaParcial}}</p>
-    <p>Situação = {{situacao}}</p>
-</div>
-<div *ngIf="mediaParcial < 60 && mediaParcial >= 10">
+<div class="tudo">
+    <h2 class="mb-3"><b>Calcular média escolar</b></h2>
     <form>
-        <div>
-            <label for="avFinal">Nota da Av. Final: </label>
-            <input id="avFinal" name="avFinal" type="number" #avFinal>
+        <div class="mb-3">
+            <label for="b1" class="form-label">Bimestre 1:&nbsp;</label>
+            <input id="b1" class="form-control-sm" name="b1" type="number" #b1>
         </div>
-        <input type="button" value="Calcular" (click)="calcularAvFinal(+avFinal.value)">
+        <div class="mb-3">
+            <label for="b2" class="form-label">Bimestre 2:&nbsp;</label>
+            <input id="b2" class="form-control-sm" name="b2" type="number" #b2>
+        </div>
+        <div class="mb-3">
+            <label for="b3" class="form-label">Bimestre 3:&nbsp;</label>
+            <input id="b3" class="form-control-sm" name="b3" type="number" #b3>
+        </div>
+        <div class="mb-3">
+            <label for="b4" class="form-label">Bimestre 4:&nbsp;</label>
+            <input id="b4" class="form-control-sm" name="b4" type="number" #b4>
+        </div>
+        <div class="mb-3">
+            <input type="submit" class="btn btn-primary" value="Calcular" (click)="calcularMediaParcial(+b1.value, +b2.value, +b3.value, +b4.value)">
+        </div>
     </form>
-</div>
-<div *ngIf="avFinal">
-    <p>Nota final = {{avFinal}}</p>
-    <p>Situação = {{situacaoFinal}}</p>
+    <div *ngIf="mediaParcial" class="mb-3">
+        <p>Média = {{mediaParcial}}</p>
+        <p>Situação = {{situacao}}</p>
+    </div>
+    <div *ngIf="mediaParcial < 60 && mediaParcial >= 10" class="mb-3">
+        <form>
+            <div class="mb-3">
+                <label for="avFinal" class="form-label">Nota da Av. Final:&nbsp;</label>
+                <input id="avFinal" class="form-control-sm" name="avFinal" type="number" #avFinal>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Calcular" (click)="calcularAvFinal(+avFinal.value)">
+        </form>
+    </div>
+    <div *ngIf="avFinal" class="mb-3">
+        <p>Nota final = {{avFinal}}</p>
+        <p>Situação = {{situacaoFinal}}</p>
+    </div>
 </div>
