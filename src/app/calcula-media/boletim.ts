@@ -10,6 +10,7 @@ export enum Situação {
 export class Boletim {
     private situacao: Situação
     private mediaParcial: number | undefined
+    private notaFinal: number | undefined
     private __b1: number | undefined
     private __b2: number | undefined
     private __b3: number | undefined
@@ -21,6 +22,7 @@ export class Boletim {
         this.b3 = bim3
         this.b4 = bim4
         this.mediaParcial = undefined
+        this.notaFinal = undefined
         this.situacao = Situação.CURSANDO
     }
 
@@ -100,7 +102,18 @@ export class Boletim {
         return this.situacao
     }
 
-    //calcularMediaFinal(): number | undefined {
+    calcularMediaFinal(avFinal: number): number | undefined {
+        let ntFinal: number
 
-    //}
+        ntFinal = (this.mediaParcial + avFinal) / 2
+        this.notaFinal = ntFinal
+
+        if (ntFinal >= 60) {
+            this.alterarSituacao(Situação.APROVADO)
+        }
+        else {
+            this.alterarSituacao(Situação.REPROVADO)
+        }
+        return ntFinal
+    }
 }

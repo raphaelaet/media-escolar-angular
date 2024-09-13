@@ -16,30 +16,20 @@ export class CalculaMediaComponent {
   constructor() {
     this.mediaParcial = undefined
     this.avFinal = undefined
-    this.situacaoFinal = Situação.AVFINAL
+    //this.situacaoFinal = Situação.AVFINAL
     this.boletim = new Boletim(0, 0, 0, 0)
   }
 
-  calcularMediaParcial(b1: number, 
-                       b2: number, 
-                       b3: number,
-                       b4: number) {
-      if (b1 && b2 && b3 && b4) {
-        this.boletim = new Boletim(b1, b2, b3, b4)
-        this.mediaParcial = this.boletim.calcularMediaParcial()
-        this.exibeSituacao()
-      }      
-  }
-
-  exibeSituacao() {
-    this.situacao = this.boletim.obterSituacao()
+  calcularMediaParcial(b1: number, b2: number, b3: number, b4: number) {
+    if (b1 && b2 && b3 && b4) {
+      this.boletim = new Boletim(b1, b2, b3, b4)
+      this.mediaParcial = this.boletim.calcularMediaParcial()
+      this.situacao = this.boletim.obterSituacao()
+    }      
   }
 
   calcularAvFinal(nota: number) {
-    this.avFinal = (nota + this.mediaParcial) / 2
-  }
-
-  informarSituacaoFinal() {
-
+    this.avFinal = this.boletim.calcularMediaFinal(nota)
+    this.situacaoFinal = this.boletim.obterSituacao()
   }
 }
