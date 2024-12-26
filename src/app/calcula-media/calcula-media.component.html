@@ -2,19 +2,19 @@
     <h2 class="mb-3"><b>Calcular média escolar</b></h2>
     <form>
         <div class="mb-3">
-            <label for="b1" class="form-label">Bimestre 1:&nbsp;</label>
+            <label for="b1" class="form-label">Bimestre 1:</label>
             <input id="b1" class="form-control-sm" name="b1" type="number" #b1>
         </div>
         <div class="mb-3">
-            <label for="b2" class="form-label">Bimestre 2:&nbsp;</label>
+            <label for="b2" class="form-label">Bimestre 2:</label>
             <input id="b2" class="form-control-sm" name="b2" type="number" #b2>
         </div>
         <div class="mb-3">
-            <label for="b3" class="form-label">Bimestre 3:&nbsp;</label>
+            <label for="b3" class="form-label">Bimestre 3:</label>
             <input id="b3" class="form-control-sm" name="b3" type="number" #b3>
         </div>
         <div class="mb-3">
-            <label for="b4" class="form-label">Bimestre 4:&nbsp;</label>
+            <label for="b4" class="form-label">Bimestre 4:</label>
             <input id="b4" class="form-control-sm" name="b4" type="number" #b4>
         </div>
         <div class="mb-3">
@@ -28,7 +28,7 @@
     <div *ngIf="mediaParcial < 60 && mediaParcial >= 10" class="mb-3">
         <form>
             <div class="mb-3">
-                <label for="avFinal" class="form-label">Nota da Av. Final:&nbsp;</label>
+                <label for="avFinal" class="form-label">Nota da Av. Final:</label>
                 <input id="avFinal" class="form-control-sm" name="avFinal" type="number" #avFinal>
             </div>
             <input type="submit" class="btn btn-primary" value="Calcular" (click)="calcularAvFinal(+avFinal.value)">
